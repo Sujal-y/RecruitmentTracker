@@ -330,9 +330,16 @@ public class DashboardController {
     private void onLogout() {
         try {
             Stage stage = (Stage) applicantTable.getScene().getWindow();
+
             FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("login.fxml"));
-            stage.setScene(new Scene(loader.load(), 500, 460));
-            stage.setTitle("Recruitment Tracker");
+
+            Scene scene = new Scene(loader.load(), 500, 460);
+
+            scene.getStylesheets().add(HelloApplication.class.getResource("styles.css").toExternalForm());
+
+            stage.setScene(scene);
+            stage.setTitle("Recruitment Tracker v1.1");
+
         } catch (IOException e) {
             e.printStackTrace();
             showError("Could not return to sign-in", e);
