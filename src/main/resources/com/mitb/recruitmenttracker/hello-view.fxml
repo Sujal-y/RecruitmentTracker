@@ -10,14 +10,54 @@
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
 
-    <Label text="ATS Recruitment Leaderboard" style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+    <HBox alignment="CENTER_LEFT" spacing="12">
+        <Label text="ATS — Administrator" style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button text="Sign out" onAction="#onLogout"/>
+    </HBox>
+    <Label text="Recruitment leaderboard" style="-fx-font-size: 14px; -fx-text-fill: #555;"/>
 
-    <TableView fx:id="applicantTable" VBox.vgrow="ALWAYS">
+    <TableView fx:id="applicantTable" VBox.vgrow="ALWAYS" prefHeight="320">
         <columns>
-            <TableColumn fx:id="colName" text="Candidate Name" prefWidth="150"/>
-            <TableColumn fx:id="colStage" text="Current Stage" prefWidth="150"/>
+            <TableColumn fx:id="colName" text="Candidate Name" prefWidth="160"/>
+            <TableColumn fx:id="colEmail" text="Email" prefWidth="190"/>
+            <TableColumn fx:id="colStatus" text="Status" prefWidth="90"/>
+            <TableColumn fx:id="colStage" text="Current Stage" prefWidth="130"/>
             <TableColumn fx:id="colRounds" text="Rounds Passed" prefWidth="120"/>
-            <TableColumn fx:id="colScore" text="Compatibility Score" prefWidth="120"/>
+            <TableColumn fx:id="colScore" text="Compatibility Score" prefWidth="140"/>
         </columns>
     </TableView>
+
+    <Separator/>
+
+    <VBox spacing="10">
+        <Label text="Add applicant" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="Name"/>
+            <TextField fx:id="newNameField" promptText="Full name" prefWidth="200"/>
+            <Label text="Email"/>
+            <TextField fx:id="newEmailField" promptText="name@example.com" prefWidth="240"/>
+        </HBox>
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="Starting stage"/>
+            <ComboBox fx:id="newApplicantStageCombo" prefWidth="200"/>
+            <Button text="Add applicant" onAction="#onAddApplicant"/>
+        </HBox>
+    </VBox>
+
+    <VBox spacing="10">
+        <Label text="Selected applicant — advance stage" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+        <Label text="Record a compatibility score (0–10) for the round they are leaving, then choose the next stage."
+               wrapText="true" style="-fx-text-fill: #555;"/>
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="Score (this round)"/>
+            <Spinner fx:id="stageScoreSpinner" editable="true" prefWidth="100"/>
+            <Label text="Next stage"/>
+            <ComboBox fx:id="updateStageCombo" prefWidth="200"/>
+            <Button fx:id="updateStageButton" text="Update stage" onAction="#onUpdateStage"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button fx:id="deleteApplicantButton" text="Delete applicant" onAction="#onDeleteApplicant"
+                    style="-fx-text-fill: #8b0000;"/>
+        </HBox>
+    </VBox>
 </VBox>

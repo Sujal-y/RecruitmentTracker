@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<TabPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.mitb.recruitmenttracker.LoginController"
+         tabClosingPolicy="UNAVAILABLE" prefWidth="480" prefHeight="420">
+    <Tab text="Administrator">
+        <VBox spacing="14" style="-fx-background-color: #f0f2f5;">
+            <padding><Insets top="24" right="28" bottom="24" left="28"/></padding>
+            <Label text="Administrator sign-in" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+            <Label text="Sign in to manage applicants and interview stages." wrapText="true"
+                   style="-fx-text-fill: #555;"/>
+            <Label text="Username"/>
+            <TextField fx:id="adminUserField" promptText="Username" maxWidth="320"/>
+            <Label text="Password"/>
+            <PasswordField fx:id="adminPassField" promptText="Password" maxWidth="320"/>
+            <HBox spacing="10">
+                <Button text="Sign in" defaultButton="true" onAction="#onAdminLogin" style="-fx-font-weight: bold;"/>
+            </HBox>
+            <Label text="Default: admin / admin (override with ADMIN_USER and ADMIN_PASSWORD)."
+                   wrapText="true" style="-fx-font-size: 11px; -fx-text-fill: #888;"/>
+        </VBox>
+    </Tab>
+    <Tab text="Applicant">
+        <VBox spacing="14" style="-fx-background-color: #f0f2f5;">
+            <padding><Insets top="24" right="28" bottom="24" left="28"/></padding>
+            <Label text="Apply for a position" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+            <Label text="Submit your details. An administrator will review your application."
+                   wrapText="true" style="-fx-text-fill: #555;"/>
+            <Label text="Full name"/>
+            <TextField fx:id="applicantNameField" promptText="Your name" maxWidth="320"/>
+            <Label text="Email"/>
+            <TextField fx:id="applicantEmailField" promptText="you@example.com" maxWidth="320"/>
+            <HBox spacing="10">
+                <Button text="Submit application" onAction="#onApplicantSubmit" style="-fx-font-weight: bold;"/>
+            </HBox>
+        </VBox>
+    </Tab>
+</TabPane>

@@ -63,7 +63,7 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.8</version>
                 <configuration>
-                    <mainClass>com.sujal.recruitmenttracker.HelloApplication</mainClass>
+                    <mainClass>com.mitb.recruitmenttracker.Launcher</mainClass>
                 </configuration>
             </plugin>
         </plugins>
