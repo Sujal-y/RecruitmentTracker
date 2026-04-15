@@ -2,6 +2,7 @@ module com.mitb.recruitmenttracker {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;
+    requires java.desktop;
     requires org.postgresql.jdbc;
 
     opens com.mitb.recruitmenttracker to javafx.fxml;
