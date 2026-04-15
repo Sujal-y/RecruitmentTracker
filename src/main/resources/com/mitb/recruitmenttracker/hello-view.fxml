@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.mitb.recruitmenttracker.HelloController">
+<VBox spacing="15.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.mitb.recruitmenttracker.DashboardController"
+      style="-fx-background-color: #f0f2f5;">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+    <Label text="ATS Recruitment Leaderboard" style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+
+    <TableView fx:id="applicantTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colName" text="Candidate Name" prefWidth="150"/>
+            <TableColumn fx:id="colStage" text="Current Stage" prefWidth="150"/>
+            <TableColumn fx:id="colRounds" text="Rounds Passed" prefWidth="120"/>
+            <TableColumn fx:id="colScore" text="Compatibility Score" prefWidth="120"/>
+        </columns>
+    </TableView>
 </VBox>
