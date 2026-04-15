@@ -5,17 +5,17 @@
 
 <VBox spacing="15.0" xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.mitb.recruitmenttracker.DashboardController"
-      style="-fx-background-color: #f0f2f5;">
+      styleClass="main-view">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
 
     <HBox alignment="CENTER_LEFT" spacing="12">
-        <Label text="ATS — Administrator" style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+        <Label text="ATS — Administrator" styleClass="header-label"/>
         <Region HBox.hgrow="ALWAYS"/>
         <Button text="Sign out" onAction="#onLogout"/>
     </HBox>
-    <Label text="Recruitment leaderboard" style="-fx-font-size: 14px; -fx-text-fill: #555;"/>
+    <Label text="Recruitment leaderboard" styleClass="text-muted"/>
 
     <TableView fx:id="applicantTable" VBox.vgrow="ALWAYS" prefHeight="320">
         <columns>
@@ -31,7 +31,7 @@
     <Separator/>
 
     <VBox spacing="10">
-        <Label text="Add applicant" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+        <Label text="Add applicant" styleClass="subheader-label"/>
         <HBox spacing="10" alignment="CENTER_LEFT">
             <Label text="Name"/>
             <TextField fx:id="newNameField" promptText="Full name" prefWidth="200"/>
@@ -46,9 +46,9 @@
     </VBox>
 
     <VBox spacing="10">
-        <Label text="Selected applicant — advance stage" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+        <Label text="Selected applicant — advance stage" styleClass="subheader-label"/>
         <Label text="Record a compatibility score (0–10) for the round they are leaving, then choose the next stage."
-               wrapText="true" style="-fx-text-fill: #555;"/>
+               wrapText="true" styleClass="text-muted"/>
         <HBox spacing="10" alignment="CENTER_LEFT">
             <Label text="Score (this round)"/>
             <Spinner fx:id="stageScoreSpinner" editable="true" prefWidth="100"/>
@@ -56,8 +56,7 @@
             <ComboBox fx:id="updateStageCombo" prefWidth="200"/>
             <Button fx:id="updateStageButton" text="Update stage" onAction="#onUpdateStage"/>
             <Region HBox.hgrow="ALWAYS"/>
-            <Button fx:id="deleteApplicantButton" text="Delete applicant" onAction="#onDeleteApplicant"
-                    style="-fx-text-fill: #8b0000;"/>
+            <Button fx:id="deleteApplicantButton" text="Delete applicant" onAction="#onDeleteApplicant"/>
         </HBox>
     </VBox>
 </VBox>

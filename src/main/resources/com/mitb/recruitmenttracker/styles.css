@@ -1,0 +1,151 @@
+.root {
+    -fx-font-family: "Segoe UI", "Inter", "Roboto", "Helvetica Neue", Arial, sans-serif;
+    -fx-background-color: #f3f4f6;
+}
+
+.main-view {
+    -fx-background-color: #f3f4f6;
+}
+
+.card-container {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 4);
+}
+
+/* Tabs */
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: transparent;
+}
+.tab-pane .tab {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 8 16 8 16;
+}
+.tab-pane .tab:selected {
+    -fx-border-color: transparent transparent #3b82f6 transparent;
+    -fx-border-width: 0 0 2 0;
+}
+.tab-pane .tab:selected .tab-label {
+    -fx-text-fill: #3b82f6;
+    -fx-font-weight: bold;
+}
+
+/* Buttons */
+.button {
+    -fx-background-color: #3b82f6;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8 16 8 16;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+.button:hover {
+    -fx-background-color: #2563eb;
+    -fx-effect: dropshadow(three-pass-box, rgba(37,99,235,0.4), 8, 0, 0, 2);
+}
+.button:pressed {
+    -fx-background-color: #1d4ed8;
+}
+
+/* Specific delete button */
+#deleteApplicantButton {
+    -fx-background-color: transparent;
+    -fx-border-color: #ef4444;
+    -fx-text-fill: #ef4444;
+    -fx-border-radius: 6;
+}
+#deleteApplicantButton:hover {
+    -fx-background-color: #fef2f2;
+}
+
+#deleteApplicantButton:pressed {
+    -fx-background-color: #fca5a5;
+    -fx-text-fill: white;
+}
+
+/* Text Fields and Combo Boxes */
+.text-field, .password-field, .combo-box, .spinner {
+    -fx-background-color: #f9fafb;
+    -fx-border-color: #d1d5db;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 8;
+    -fx-text-fill: #1f2937;
+}
+
+.text-field:focused, .password-field:focused, .combo-box:focused, .spinner:focused {
+    -fx-border-color: #3b82f6;
+    -fx-background-color: white;
+    -fx-effect: dropshadow(three-pass-box, rgba(59,130,246,0.3), 4, 0, 0, 0);
+}
+
+/* Table View */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #e5e7eb;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 4);
+    -fx-padding: 0;
+}
+.table-view .column-header-background {
+    -fx-background-color: #f9fafb;
+    -fx-background-radius: 8 8 0 0;
+    -fx-padding: 6 0 6 0;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: #e5e7eb;
+}
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+.table-view .column-header .label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #6b7280;
+}
+.table-view .table-row-cell {
+    -fx-background-color: white;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: #f3f4f6;
+    -fx-padding: 6;
+}
+.table-view .table-row-cell:odd {
+    -fx-background-color: #fafaf9;
+}
+.table-view .table-row-cell:selected {
+    -fx-background-color: #eff6ff;
+}
+.table-view .table-row-cell:selected .text {
+    -fx-fill: #1e3a8a;
+    -fx-font-weight: bold;
+}
+.table-view .table-row-cell:hover {
+    -fx-background-color: #f3f4f6;
+}
+
+/* Label Classes */
+.label {
+    -fx-text-fill: #374151;
+}
+
+.header-label {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #111827;
+}
+
+.subheader-label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #111827;
+}
+
+.text-muted {
+    -fx-text-fill: #6b7280;
+    -fx-font-size: 14px;
+}
+
+.text-small-muted {
+    -fx-text-fill: #9ca3af;
+    -fx-font-size: 11px;
+}

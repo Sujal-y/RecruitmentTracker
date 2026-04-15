@@ -36,6 +36,7 @@ public class LoginController {
             Stage stage = (Stage) adminUserField.getScene().getWindow();
             FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
             Scene scene = new Scene(loader.load(), 960, 700);
+            scene.getStylesheets().add(HelloApplication.class.getResource("styles.css").toExternalForm());
             stage.setScene(scene);
             stage.setTitle("Recruitment Tracker — Admin");
         } catch (IOException e) {

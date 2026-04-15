@@ -62,6 +62,35 @@ public class DashboardController {
         colStage.setCellValueFactory(new PropertyValueFactory<>("currentStage"));
         colRounds.setCellValueFactory(new PropertyValueFactory<>("roundsCompleted"));
         colScore.setCellValueFactory(new PropertyValueFactory<>("avgScore"));
+        colScore.setCellFactory(col -> new TableCell<Applicant, Double>() {
+            private final HBox box = new HBox(8);
+            private final ProgressBar bar = new ProgressBar();
+            private final Label lbl = new Label();
+            {
+                box.setAlignment(javafx.geometry.Pos.CENTER_LEFT);
+                bar.setPrefWidth(60);
+                bar.setPrefHeight(10);
+                bar.setStyle("-fx-accent: #3b82f6; -fx-control-inner-background: #e5e7eb;");
+                lbl.setStyle("-fx-text-fill: #374151; -fx-font-weight: bold;");
+                box.getChildren().addAll(bar, lbl);
+            }
+            @Override
+            protected void updateItem(Double item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || item == null) {
+                    setGraphic(null);
+                } else {
+                    double max = 0.0;
+                    for (Applicant a : getTableView().getItems()) {
+                        if (a.getAvgScore() > max) max = a.getAvgScore();
+                    }
+                    if (max == 0) max = 10.0;
+                    bar.setProgress(item / max);
+                    lbl.setText(String.format("%.1f", item));
+                    setGraphic(box);
+                }
+            }
+        });
 
         stageScoreSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 10, 7, 1));
 
